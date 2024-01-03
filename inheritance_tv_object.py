@@ -8,14 +8,20 @@ class TV:
     def increase_volume(self):
         if self.volume < 100:
             self.volume += 1
+        else:
+            print("Volume is already at the maximum limit (100). Unable to increase volume.")
 
     def decrease_volume(self):
         if self.volume > 0:
             self.volume -= 1
+        else:
+            print("Volume is already at the minimum limit (0). Unable to decrease volume.")
 
     def set_channel(self, channel):
         if 1 <= channel <= 50:
             self.channel = channel
+        else:
+            print(f"Invalid channel. {self.brand} stays at the current channel: {self.channel}")
 
     def reset_tv(self):
         self.channel = 1
@@ -80,9 +86,9 @@ plasma_tv.set_display_details("Full HD")
 
 # Testing TV class methods
 led_tv.increase_volume()
-led_tv.set_channel(10)
+led_tv.set_channel(18)
 print(led_tv.get_status())  # Output: Sony at channel 10, volume 51
 
 plasma_tv.decrease_volume()
-plasma_tv.set_channel(5)
-print(plasma_tv.get_status())  # Output: Samsung at channel 5, volume 49
+plasma_tv.set_channel(59)
+print(plasma_tv.get_status())  # Output: Samsung at channel 1, volume 49
